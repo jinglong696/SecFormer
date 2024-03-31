@@ -58,7 +58,7 @@ def secformer_div(x , y):
 
 for input_0_enc,input_1_enc in zip(input_0_enc_list,input_1_enc_list):
     print(input_0_enc.shape, input_0_enc.shape)
-    n = 3
+    n = 10
     for i in range(n):
         # crypten division
         t0 = time.time()
