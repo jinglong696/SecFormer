@@ -110,7 +110,7 @@ class puma_gelu(cnn.Module):
 
 gelu_puma = puma_gelu().encrypt()
 
-n = 3
+n = 10
 for i in range(n):    
     
     # gelu_puma test
