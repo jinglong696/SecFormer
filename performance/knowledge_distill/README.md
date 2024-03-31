@@ -13,4 +13,4 @@ Potential issues:
 (1) In case of dataset minor mismatch, such as "STS-B" and "STSB", please change the data dir as written in task_distill.py. This is due to different naming convention
     of HuggingFace and other Repos.
 
-(2) Hyper-parameters can be overwrite in task_distill.py, 
+(2) Hyper-parameters can be overwrite in task_distill.py.
