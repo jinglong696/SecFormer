@@ -90,7 +90,7 @@ secformer_softmax = SecFormer_Softmax(dim = -1).encrypt()
 puma_softmax = Puma_Softmax(dim = -1).encrypt()
 quad = softmax_2QUAD(dim = -1).encrypt()
 
-n = 3
+n = 10
 for i in range(n):
     # secformer softmax
     t0 = time.time()
