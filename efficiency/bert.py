@@ -49,9 +49,6 @@ class BertEmbeddings(cnn.Module):
         self.moduleList.append(cnn.Linear(self.lastTokenDim, config.hidden_size))
 
         self.position_embeddings = cnn.Linear(config.max_position_embeddings, config.hidden_size)
-#         print(config.hidden_size)
-#         self.LayerNorm = cnn.BatchNorm2d(config.hidden_size, eps=config.layer_norm_eps)
-################################layernorm########################################################
         if config.norm == "crypten_norm":
             self.LayerNorm = crypten_norm(config.hidden_size, eps=config.layer_norm_eps)
         elif config.norm == "puma_norm":
@@ -230,9 +227,6 @@ class BertSelfOutput(cnn.Module):
     def __init__(self, config, timing):
         super(BertSelfOutput, self).__init__()
         self.dense = cnn.Linear(config.hidden_size, config.hidden_size)
-        # using batchnorm here, crypten has not implemented LayerNorm
-############################Layernorm###########################################################
-#         self.LayerNorm = cnn.BatchNorm2d(config.hidden_size, eps=config.layer_norm_eps)
         if config.norm == "crypten_norm":
             self.LayerNorm = crypten_norm(config.hidden_size, eps=config.layer_norm_eps)
         elif config.norm == "puma_norm":
@@ -317,8 +311,6 @@ class BertOutput(cnn.Module):
     def __init__(self, config, timing):
         super(BertOutput, self).__init__()
         self.dense = cnn.Linear(config.intermediate_size, config.hidden_size)
-        # using batchnorm here, crypten has not implemented LayerNorm
-################################layernorm########################################################
         if config.norm == "crypten_norm":
             self.LayerNorm = crypten_norm(config.hidden_size, eps=config.layer_norm_eps)
         elif config.norm == "puma_norm":
