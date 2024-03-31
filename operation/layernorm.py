@@ -103,7 +103,7 @@ puma_norm = Puma_norm(768).encrypt()
 secformer_norm =  SecFormer_norm(768).encrypt()
 
 
-n = 3
+n = 10
 for i in range(n):
     
     # my layernorm
