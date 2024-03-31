@@ -56,7 +56,7 @@ def inv_sqrt(x):
 
 for input_0_enc in input_0_enc_list:
     print(input_0_enc.shape)
-    n = 3
+    n = 10
     for i in range(n):
         # crypten inv_sqrt
         t0 = time.time()
